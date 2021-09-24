@@ -16,7 +16,7 @@
 <meta property="og:description" content="数组的基本操作（Array）数组也是一个对象，不同的是普通的对象是使用字符串作为属性名，而数组是使用数字作为索引来操作元素。 数组长度没有限制，数组元素可以是数据类型，数组创建： 12345var arr &#x3D; new Array();&#x2F;&#x2F;使用构造函数创建数组，无参；var arr0 &#x3D; new Array(10, 20, 30);&#x2F;&#x2F;使用构造函数创建数组时，也可以同时添加元素，将要添加的元素作为构">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-24T01:02:03.000Z">
-<meta property="article:modified_time" content="2021-09-24T06:13:16.042Z">
+<meta property="article:modified_time" content="2021-09-24T06:28:04.652Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -180,6 +180,8 @@
 
 <p>使用typeof检查一个数组时，会返回object。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr)<span class="comment">//返回object</span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//添加元素，索引是从0开始的整数。</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length)<span class="comment">//获取数组的长度</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">&quot;唐僧&quot;</span>, <span class="string">&quot;蜘蛛精&quot;</span>);<span class="comment">//向数组末尾添加一个或者多个元素，并返回数组新的长度</span></span><br><span class="line">arr.unshift(<span class="string">&quot;牛魔王&quot;</span>);<span class="comment">//向数组的开头添加一个或者多个元素，并返回新的数组长度</span></span><br><span class="line"></span><br><span class="line">arr.pop();<span class="comment">//删除数组最后一个元素，并将被删除的元素返回</span></span><br><span class="line">arr.shift();<span class="comment">//删除数组的第一个元素，并将被删除的元素返回</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
       

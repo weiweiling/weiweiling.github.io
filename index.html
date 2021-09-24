@@ -179,6 +179,8 @@
 <p>使用typeof检查一个数组时，会返回object。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr)<span class="comment">//返回object</span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">10</span>;<span class="comment">//添加元素，索引是从0开始的整数。</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length)<span class="comment">//获取数组的长度</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="增删查改"><a href="#增删查改" class="headerlink" title="增删查改"></a>增删查改</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">arr.push(<span class="string">&quot;唐僧&quot;</span>, <span class="string">&quot;蜘蛛精&quot;</span>);<span class="comment">//向数组末尾添加一个或者多个元素，并返回数组新的长度</span></span><br><span class="line">arr.unshift(<span class="string">&quot;牛魔王&quot;</span>);<span class="comment">//向数组的开头添加一个或者多个元素，并返回新的数组长度</span></span><br><span class="line"></span><br><span class="line">arr.pop();<span class="comment">//删除数组最后一个元素，并将被删除的元素返回</span></span><br><span class="line">arr.shift();<span class="comment">//删除数组的第一个元素，并将被删除的元素返回</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 
       
 
