@@ -16,7 +16,7 @@
 <meta property="og:description" content="数组的基本操作（Array）数组也是一个对象，不同的是普通的对象是使用字符串作为属性名，而数组是使用数字作为索引来操作元素。 数组长度没有限制，数组元素可以是数据类型。 数组创建：12345var arr &#x3D; new Array();&#x2F;&#x2F;使用构造函数创建数组，无参；var arr0 &#x3D; new Array(10, 20, 30);&#x2F;&#x2F;使用构造函数创建数组时，也可以同时添加元素，将要添加的元素作为构">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-09-24T01:02:03.000Z">
-<meta property="article:modified_time" content="2021-09-26T06:42:39.245Z">
+<meta property="article:modified_time" content="2021-09-27T00:39:49.579Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -185,7 +185,9 @@
 
 <h2 id="数组遍历："><a href="#数组遍历：" class="headerlink" title="数组遍历："></a>数组遍历：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i&lt;arr.length;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="forEach-这个方法只支持IE8以上的浏览器"><a href="#forEach-这个方法只支持IE8以上的浏览器" class="headerlink" title="forEach(这个方法只支持IE8以上的浏览器)"></a>forEach(这个方法只支持IE8以上的浏览器)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">        );<span class="comment">//像这种函数，由我们创建但不由我们调用，回调函数,数组中有几个元素就会执行几次。每次执行时，浏览器会将遍历到的元素以实参的形式传递进来，我们可以定义形参来读取这些内容。浏览器会在回调函数中传递三个参数：第一个就是当前正在遍历的元素，第二个参数是当前正在遍历元素的索引，第三个参数是正在遍历的数组对象</span></span><br></pre></td></tr></table></figure>
+<h2 id="forEach-这个方法只支持IE8以上的浏览器"><a href="#forEach-这个方法只支持IE8以上的浏览器" class="headerlink" title="forEach(这个方法只支持IE8以上的浏览器)"></a>forEach(这个方法只支持IE8以上的浏览器)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;);</span><br><span class="line"><span class="comment">//像这种函数，由我们创建但不由我们调用，回调函数,数组中有几个元素就会执行几次。每次执行时，浏览器会将遍历到的元素以实参的形式传递进来，我们可以定义形参来读取这些内容。浏览器会在回调函数中传递三个参数：第一个就是当前正在遍历的元素，第二个参数是当前正在遍历元素的索引，第三个参数是正在遍历的数组对象</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="slice"><a href="#slice" class="headerlink" title="slice|"></a>slice|</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.slice(<span class="number">0</span>, <span class="number">2</span>);<span class="comment">//截取开始位置的索引，截取结束位置的索引</span></span><br></pre></td></tr></table></figure>
 
 
       
