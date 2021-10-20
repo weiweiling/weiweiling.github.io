@@ -1136,23 +1136,29 @@ pre .javascript .function {
   display: inline-block;
 }
 .site-author-image {
-  border: 2px solid #333;
   display: block;
   margin: 0 auto;
+  padding: $site-author-image-padding;
   max-width: 96px;
-  padding: 2px;
+  height: $site-author-image-height;
+  border: 2px solid #333;
+  border-radius: 60%;
+  transition: 2.5s all;
+}
+.site-author-image:hover {
+  transform: rotate(360deg);
 }
 .site-author-name {
+  margin: 5px 0 0;
+  text-align: $site-author-name-align;
   color: #f5f5f5;
   font-weight: normal;
-  margin: 5px 0 0;
-  text-align: center;
 }
 .site-description {
-  color: #999;
-  font-size: 1em;
   margin-top: 5px;
-  text-align: center;
+  text-align: $site-description-align;
+  font-size: 1em;
+  color: #999;
 }
 .links-of-author {
   margin-top: 15px;
@@ -1168,7 +1174,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ddffe8;
+  background: #74175d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2288,4 +2294,16 @@ embed {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+body {
+  background: url("/images/xingkong.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
+body {
+  background: url("/images/xingkong.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
 }
