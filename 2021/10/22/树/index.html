@@ -11,15 +11,15 @@
     
 
     
-    <meta name="description" content="树的基本介绍 概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。">
+    <meta name="description" content="树的基本介绍 树的概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。  二叉树：  二叉树是n(n&gt;&#x3D;0)个结点的有限集合，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树">
 <meta property="og:url" content="http://example.com/2021/10/22/%E6%A0%91/index.html">
 <meta property="og:site_name" content="front-end study">
-<meta property="og:description" content="树的基本介绍 概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。">
+<meta property="og:description" content="树的基本介绍 树的概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。  二叉树：  二叉树是n(n&gt;&#x3D;0)个结点的有限集合，">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-22T02:27:43.000Z">
-<meta property="article:modified_time" content="2021-10-22T02:30:52.690Z">
+<meta property="article:modified_time" content="2021-10-29T12:54:45.815Z">
 <meta property="article:author" content="weiweiling">
 <meta property="article:tag" content="tree">
 <meta name="twitter:card" content="summary">
@@ -102,16 +102,40 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">概念：</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">树的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">树的特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">性质：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">二叉树遍历</span></a></li></ol></li></ol></li></ol>
 		
 		</div>
 		
 		<h1>树的基本介绍</h1>
-<h2 id="概念：">概念：</h2>
+<h2 id="树的概念：">树的概念：</h2>
 <blockquote>
 <p><strong>树</strong>是一种数据结构，它是由<em>n(n≥1</em>)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点：</p>
 <p>每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。</p>
 </blockquote>
+<h2 id="二叉树：">二叉树：</h2>
+<blockquote>
+<p><strong>二叉树</strong>是n(n&gt;=0)个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树组成。</p>
+<h3 id="树的特点：">树的特点：</h3>
+<p>由二叉树定义以及图示分析得出二叉树有以下特点：<br>
+1）每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点。<br>
+2）左子树和右子树是有顺序的，次序不能任意颠倒。<br>
+3）即使树中某结点只有一棵子树，也要区分它是左子树还是右子树。</p>
+<h3 id="性质：">性质：</h3>
+<p>1）在二叉树的第i层上最多有2i-1 个节点 。（i&gt;=1）<br>
+2）二叉树中如果深度为k,那么最多有2k-1个节点。(k&gt;=1）<br>
+3）n0=n2+1  n0表示度数为0的节点数，n2表示度数为2的节点数。<br>
+4）在完全二叉树中，具有n个节点的完全二叉树的深度为[log2n]+1，其中[log2n]是向下取整。<br>
+5）若对含 n 个结点的完全二叉树从上到下且从左至右进行 1 至 n 的编号，则对完全二叉树中任意一个编号为 i 的结点有如下特性：</p>
+<blockquote>
+<p>(1) 若 i=1，则该结点是二叉树的根，无双亲, 否则，编号为 [i/2] 的结点为其双亲结点;<br>
+(2) 若 2i&gt;n，则该结点无左孩子，  否则，编号为 2i 的结点为其左孩子结点；<br>
+(3) 若 2i+1&gt;n，则该结点无右孩子结点，  否则，编号为2i+1 的结点为其右孩子结点。</p>
+</blockquote>
+</blockquote>
+<h3 id="二叉树遍历">二叉树遍历</h3>
+<p>前序遍历，中序遍历，后序遍历。</p>
+<p><strong>前序遍历</strong>通俗的说就是从二叉树的根结点出发，当第一次到达结点时就输出结点数据，按照先向左在向右的方向访问。中序后序以此类推。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">TreeNode</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">          <span class="built_in">this</span>.val = val;</span><br><span class="line">          <span class="built_in">this</span>.left = <span class="built_in">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">preorderTraversal</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">const</span> res = [];</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">inorder</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(root==<span class="literal">null</span>)</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                res.push(root.val);</span><br><span class="line">                inorder(root.left);</span><br><span class="line">                inorder(root.right);</span><br><span class="line">            &#125;</span><br><span class="line">            inorder(root);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -163,7 +187,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">概念：</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树的基本介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">树的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">树的特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">性质：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">二叉树遍历</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
