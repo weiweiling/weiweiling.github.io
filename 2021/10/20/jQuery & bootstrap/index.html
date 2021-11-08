@@ -4,22 +4,22 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>bootstrap | front-end study</title>
+    <title>jQuery &amp; bootstrap | front-end study</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="weiweiling">
     
 
     
-    <meta name="description" content="学前小菜 我的第一个用了[boostrap][https:&#x2F;&#x2F;v3.bootcss.com]的代码： 12345678910111213141516171819202122232425262728293031323334353637&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;   &lt;meta charset&#x3D;&quot;utf-8&quot;&amp;g">
+    <meta name="description" content="jQuery语法  jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。 基础语法： $(*selector*).*action*()  美元符号定义 jQuery 选择符（selector）“查询&quot;和&quot;查找” HTML 元素 jQuery 的 action() 执行对元素的操作  实例:  $(this).hide() - 隐藏当前元素 $(“p”).h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="bootstrap">
-<meta property="og:url" content="http://example.com/2021/10/20/bootstrap/index.html">
+<meta property="og:title" content="jQuery &amp; bootstrap">
+<meta property="og:url" content="http://example.com/2021/10/20/jQuery%20&%20bootstrap/index.html">
 <meta property="og:site_name" content="front-end study">
-<meta property="og:description" content="学前小菜 我的第一个用了[boostrap][https:&#x2F;&#x2F;v3.bootcss.com]的代码： 12345678910111213141516171819202122232425262728293031323334353637&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;   &lt;meta charset&#x3D;&quot;utf-8&quot;&amp;g">
+<meta property="og:description" content="jQuery语法  jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。 基础语法： $(*selector*).*action*()  美元符号定义 jQuery 选择符（selector）“查询&quot;和&quot;查找” HTML 元素 jQuery 的 action() 执行对元素的操作  实例:  $(this).hide() - 隐藏当前元素 $(“p”).h">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-20T02:34:18.000Z">
-<meta property="article:modified_time" content="2021-10-22T02:39:51.561Z">
+<meta property="article:modified_time" content="2021-11-08T07:01:19.594Z">
 <meta property="article:author" content="weiweiling">
 <meta property="article:tag" content="introduction hexo">
 <meta name="twitter:card" content="summary">
@@ -86,7 +86,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2021/10/20/bootstrap/" title="bootstrap" itemprop="url">bootstrap</a>
+      <a href="/2021/10/20/jQuery & bootstrap/" title="jQuery &amp; bootstrap" itemprop="url">jQuery &amp; bootstrap</a>
   </h1>
   <p class="article-author">By
        
@@ -102,16 +102,47 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">学前小菜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">栅格系统</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1>学前小菜</h1>
+		<h1>jQuery语法</h1>
+<blockquote>
+<p>jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。</p>
+<p>基础语法： <strong>$(*selector*).*action*()</strong></p>
+<ul>
+<li>美元符号定义 jQuery</li>
+<li>选择符（selector）“查询&quot;和&quot;查找” HTML 元素</li>
+<li>jQuery 的 action() 执行对元素的操作</li>
+</ul>
+<p>实例:</p>
+<ul>
+<li>$(this).hide() - 隐藏当前元素</li>
+<li>$(“p”).hide() - 隐藏所有 <p> 元素</li>
+<li>$(“p.test”).hide() - 隐藏所有 class=“test” 的 <p> 元素</li>
+<li>$(“#test”).hide() - 隐藏 id=“test” 的元素</li>
+</ul>
+</blockquote>
+<blockquote>
+<h2 id="文档就绪事件">文档就绪事件</h2>
+<p>您也许已经注意到在我们的实例中的所有 jQuery 函数位于一个 document ready 函数中：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 开始写 jQuery 代码...  </span></span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
+<p>这是为了防止文档在完全加载（就绪）之前运行 jQuery 代码，即在 DOM 加载完成后才可以对 DOM 进行操作。</p>
+<p>如果在文档没有完全加载之前就运行函数，操作可能失败。下面是两个具体的例子：</p>
+<ul>
+<li>试图隐藏一个不存在的元素</li>
+<li>获得未完全加载的图像的大小</li>
+</ul>
+<p>**提示：**简洁写法（与以上写法效果相同）:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 开始写 jQuery 代码...  </span></span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
+<p>以上两种方式你可以选择你喜欢的方式实现文档就绪后执行 jQuery 方法。</p>
+</blockquote>
+<h1>Bootstrap</h1>
 <p>我的第一个用了[boostrap][<a target="_blank" rel="noopener" href="https://v3.bootcss.com">https://v3.bootcss.com</a>]的代码：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">title</span>&gt;</span>Bootstrap 实例 - 响应式的列重置<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span> = <span class="string">&quot;container&quot;</span>&gt;</span><span class="comment">&lt;!--      .container 类用于固定宽度并支持响应式布局的容器--&gt;</span></span><br><span class="line">      123</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container-fluid&quot;</span>&gt;</span> <span class="comment">&lt;!--      .container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。--&gt;</span></span><br><span class="line">      456</span><br><span class="line">   <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">&quot;table table-bordered&quot;</span>&gt;</span><span class="comment">&lt;!--      添加 .table-bordered 类为表格和其中的每个单元格增加边框。--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>科目<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>成绩<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>夏明<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>数学<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>149<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>徐雪<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>英语<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">td</span>&gt;</span>139<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>要使用boostrap，下面这些代码是必须要添加上的：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h1>栅格系统</h1>
+<h2 id="栅格系统">栅格系统</h2>
 <blockquote>
 <p>Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。</p>
 </blockquote>
@@ -133,7 +164,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://example.com/2021/10/20/bootstrap/" data-title="bootstrap | front-end study" data-tsina="" class="share clearfix">
+	  <div data-url="http://example.com/2021/10/20/jQuery%20&%20bootstrap/" data-title="jQuery &amp; bootstrap | front-end study" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -175,7 +206,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">学前小菜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">栅格系统</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
  
   </div>
 
