@@ -19,7 +19,7 @@
 <meta property="og:description" content="jQuery语法  jQuery 语法是通过选取 HTML 元素，并对选取的元素执行某些操作。 基础语法： $(*selector*).*action*()  美元符号定义 jQuery 选择符（selector）“查询&quot;和&quot;查找” HTML 元素 jQuery 的 action() 执行对元素的操作  实例:  $(this).hide() - 隐藏当前元素 $(“p”).h">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-20T02:34:18.000Z">
-<meta property="article:modified_time" content="2021-11-08T07:01:19.594Z">
+<meta property="article:modified_time" content="2021-11-11T12:56:36.403Z">
 <meta property="article:author" content="weiweiling">
 <meta property="article:tag" content="introduction hexo">
 <meta name="twitter:card" content="summary">
@@ -102,7 +102,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">jQuery事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#click"><span class="toc-number">1.2.1.</span> <span class="toc-text">click()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E5%8A%A8%E7%94%BB%E2%80%93animate-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">jQuery动画–animate() 方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -136,6 +136,46 @@
 <p>**提示：**简洁写法（与以上写法效果相同）:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// 开始写 jQuery 代码...  </span></span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure>
 <p>以上两种方式你可以选择你喜欢的方式实现文档就绪后执行 jQuery 方法。</p>
+</blockquote>
+<h2 id="jQuery事件">jQuery事件</h2>
+<blockquote>
+<p>页面对不同访问者的响应叫做事件。</p>
+<p>事件处理程序指的是当 HTML 中发生某些事件时所调用的方法。</p>
+<p>实例：</p>
+<ul>
+<li>在元素上移动鼠标。</li>
+<li>选取单选按钮</li>
+<li>点击元素</li>
+</ul>
+</blockquote>
+<h3 id="click">click()</h3>
+<blockquote>
+<p>click() 方法是当按钮点击事件被触发时会调用一个函数。</p>
+<p>该函数在用户点击 HTML 元素时执行。</p>
+<p>在下面的实例中，当点击事件在某个 <p> 元素上触发时，隐藏当前的 <p> 元素：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">        $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            $(<span class="string">&quot;p&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                $(<span class="built_in">this</span>).hide();</span></span></span><br><span class="line"><span class="javascript"><span class="xml">                        &#125;)&#125;);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>如果你点我，我就会消失。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>继续点我!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>接着点我!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>dblclick()</strong> – 鼠标双击事件， <strong>mouseenter()</strong> – 当鼠标指针穿过元素， <strong>mouseleave()</strong> – 当鼠标指针离开元素</p>
+<p>，<strong>mousedown()</strong> – 当鼠标指针移动到元素上方，并按下鼠标按键，等等。</p>
+<blockquote>
+<p>jQuery Fading 方法：</p>
+<p>通过 jQuery，您可以实现元素的淡入淡出效果。</p>
+<p>jQuery 拥有下面四种 fade 方法：</p>
+<ul>
+<li>fadeIn()</li>
+<li>fadeOut()</li>
+<li>fadeToggle()</li>
+<li>fadeTo()</li>
+</ul>
+</blockquote>
+<h2 id="jQuery动画–animate-方法">jQuery动画–animate() 方法</h2>
+<blockquote>
+<p>jQuery animate() 方法用于创建自定义动画。</p>
+<p><strong>语法：</strong></p>
+<p>$(<em>selector</em>).animate({<em>params</em>}<em>,speed,callback</em>);</p>
+<p>必需的 params 参数定义形成动画的 CSS 属性。</p>
+<p>可选的 speed 参数规定效果的时长。它可以取以下值：“slow”、“fast” 或毫秒。</p>
+<p>可选的 callback 参数是动画完成后所执行的函数名称。</p>
 </blockquote>
 <h1>Bootstrap</h1>
 <p>我的第一个用了[boostrap][<a target="_blank" rel="noopener" href="https://v3.bootcss.com">https://v3.bootcss.com</a>]的代码：</p>
@@ -206,7 +246,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">jQuery语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%B0%B1%E7%BB%AA%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">文档就绪事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E4%BA%8B%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">jQuery事件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#click"><span class="toc-number">1.2.1.</span> <span class="toc-text">click()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery%E5%8A%A8%E7%94%BB%E2%80%93animate-%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">jQuery动画–animate() 方法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
  
   </div>
 
