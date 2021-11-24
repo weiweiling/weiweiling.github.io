@@ -1,0 +1,577 @@
+
+ <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Tree &amp; Graph | front-end study</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="weiweiling">
+    
+
+    
+    <meta name="description" content="树 树的概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。  二叉树：  二叉树是n(n&gt;&#x3D;0)个结点的有限集合，该集合或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tree &amp; Graph">
+<meta property="og:url" content="http://example.com/2021/10/22/Tree&Graph/index.html">
+<meta property="og:site_name" content="front-end study">
+<meta property="og:description" content="树 树的概念：  树是一种数据结构，它是由n(n≥1)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点： 每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。  二叉树：  二叉树是n(n&gt;&#x3D;0)个结点的有限集合，该集合或者">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-22T02:27:43.000Z">
+<meta property="article:modified_time" content="2021-11-24T12:15:05.700Z">
+<meta property="article:author" content="weiweiling">
+<meta property="article:tag" content="tree">
+<meta name="twitter:card" content="summary">
+
+    
+    <link rel="alternative" href="/atom.xml" title="front-end study" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="front-end study" title="front-end study"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="front-end study">front-end study</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/about">About</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:example.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2021/10/22/Tree&Graph/" title="Tree &amp; Graph" itemprop="url">Tree &amp; Graph</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="weiweiling" target="_blank" itemprop="author">weiweiling</a>
+		
+  <p class="article-time">
+    <time datetime="2021-10-22T02:27:43.000Z" itemprop="datePublished"> Published 2021-10-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">树的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">树的特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">性质：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">二叉树遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二叉树结点删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">3.1.</span> <span class="toc-text">图的相关术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.</span> <span class="toc-text">图的表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.1.</span> <span class="toc-text">邻接矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">邻接表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.3.</span> <span class="toc-text">关联矩阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E7%B1%BB"><span class="toc-number">3.3.</span> <span class="toc-text">创建图类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E7%B1%BB-2"><span class="toc-number">3.4.</span> <span class="toc-text">创建图类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.5.</span> <span class="toc-text">创建实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A"><span class="toc-number">3.6.</span> <span class="toc-text">输出的结果为：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">图的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86"><span class="toc-number">4.1.</span> <span class="toc-text">广度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0bfs%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">添加bfs方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAbfs%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.4.</span> <span class="toc-text">创建bfs实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.5.</span> <span class="toc-text">bfs输出结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8BFS%E5%AF%BB%E6%89%BE%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-number">4.6.</span> <span class="toc-text">使用BFS寻找最短路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BABFS%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.7.</span> <span class="toc-text">创建BFS实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFS%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.8.</span> <span class="toc-text">BFS输出结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86"><span class="toc-number">4.9.</span> <span class="toc-text">4.2.深度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A-2"><span class="toc-number">4.10.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0dfs%E6%96%B9%E6%B3%95"><span class="toc-number">4.11.</span> <span class="toc-text">添加dfs方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAdfs%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.12.</span> <span class="toc-text">创建dfs实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.13.</span> <span class="toc-text">dfs输出结果</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1>树</h1>
+<h2 id="树的概念：">树的概念：</h2>
+<blockquote>
+<p><strong>树</strong>是一种数据结构，它是由<em>n(n≥1</em>)个有限节点组成一个具有层次关系的集合。把它叫做“树”是因为它看起来像一棵倒挂的树，也就是说它是根朝上，而叶朝下的。它具有以下的特点：</p>
+<p>每个节点有零个或多个子节点；没有父节点的节点称为根节点；每一个非根节点有且只有一个父节点；除了根节点外，每个子节点可以分为多个不相交的子树。</p>
+</blockquote>
+<h2 id="二叉树：">二叉树：</h2>
+<blockquote>
+<p><strong>二叉树</strong>是n(n&gt;=0)个结点的有限集合，该集合或者为空集（称为空二叉树），或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树组成。</p>
+<h3 id="树的特点：">树的特点：</h3>
+<p>由二叉树定义以及图示分析得出二叉树有以下特点：<br>
+1）每个结点最多有两颗子树，所以二叉树中不存在度大于2的结点。<br>
+2）左子树和右子树是有顺序的，次序不能任意颠倒。<br>
+3）即使树中某结点只有一棵子树，也要区分它是左子树还是右子树。</p>
+<h3 id="性质：">性质：</h3>
+<p>1）在二叉树的第i层上最多有2i-1 个节点 。（i&gt;=1）<br>
+2）二叉树中如果深度为k,那么最多有2k-1个节点。(k&gt;=1）<br>
+3）n0=n2+1  n0表示度数为0的节点数，n2表示度数为2的节点数。<br>
+4）在完全二叉树中，具有n个节点的完全二叉树的深度为[log2n]+1，其中[log2n]是向下取整。<br>
+5）若对含 n 个结点的完全二叉树从上到下且从左至右进行 1 至 n 的编号，则对完全二叉树中任意一个编号为 i 的结点有如下特性：</p>
+<blockquote>
+<p>(1) 若 i=1，则该结点是二叉树的根，无双亲, 否则，编号为 [i/2] 的结点为其双亲结点;<br>
+(2) 若 2i&gt;n，则该结点无左孩子，  否则，编号为 2i 的结点为其左孩子结点；<br>
+(3) 若 2i+1&gt;n，则该结点无右孩子结点，  否则，编号为2i+1 的结点为其右孩子结点。</p>
+</blockquote>
+</blockquote>
+<h3 id="二叉树遍历">二叉树遍历</h3>
+<p>前序遍历，中序遍历，后序遍历。</p>
+<p><strong>前序遍历</strong>通俗的说就是从二叉树的根结点出发，当第一次到达结点时就输出结点数据，按照先向左在向右的方向访问。中序后序以此类推。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//前序遍历</span></span><br><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">TreeNode</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">          <span class="built_in">this</span>.val = val;</span><br><span class="line">          <span class="built_in">this</span>.left = <span class="built_in">this</span>.right = <span class="literal">null</span>;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">preorderTraversal</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">const</span> res = [];</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">inorder</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(root==<span class="literal">null</span>)</span><br><span class="line">                    <span class="keyword">return</span>;</span><br><span class="line">                res.push(root.val);</span><br><span class="line">                inorder(root.left);<span class="comment">//递归</span></span><br><span class="line">                inorder(root.right);</span><br><span class="line">            &#125;</span><br><span class="line">            inorder(root);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//中序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">inorderTraversal</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inorder</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        inorder(root.left);<span class="comment">//递归</span></span><br><span class="line">        res.push(root.val);</span><br><span class="line">        inorder(root.right);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//后序遍历</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">postorderTraversal</span>(<span class="params">root</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = [];</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">inorder</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        inorder(root.left);<span class="comment">//递归</span></span><br><span class="line">        inorder(root.right);</span><br><span class="line">        res.push(root.val);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h1>二叉树结点删除</h1>
+<p>规定：</p>
+<p>1）如果删除的节点是叶子节点，则删除该节点</p>
+<p>2）如果删除的节点是非叶子节点，则删除该子树</p>
+<p>思路：</p>
+<p>1）考虑树是空树root。那么只有一个root节点，则等价将二叉树置空。</p>
+<p>2）因为我们的二叉树是单向的，所以我们是判断当前节点的子节点是否删除节点，而不能去判断当前节点是不是需要删除节点。</p>
+<p>3）如果当前节点的左子节点不为空，并且左子节点就是需要删除节点，就将this.left = null，并且就返回（结束递归删除）</p>
+<p>4）如果当前节点的右子节点不为空，并且右子节点就是需要删除节点，就将this.right= null，并且就返回（结束递归删除）</p>
+<p>5）如果第2步和第3步没有删除节点，那么我们就需要向左子树进行递归删除</p>
+<p>6）如果第4步没有删除节点，则应当向右子树进行递归删除。</p>
+<blockquote>
+<h1>图</h1>
+<p>(引自https://blog.csdn.net/weixin_42126431/article/details/89537923)</p>
+<h2 id="图的相关术语">图的相关术语</h2>
+<p>1.1.有一条边相连的顶点叫相邻顶点；<br>
+1.2.一个顶点的度就是该顶点的相邻顶点数；<br>
+1.3.路径指顶点组成的连续序列；<br>
+1.4.简单路径没有重复顶点；<br>
+1.5.有向图和无向图</p>
+<h2 id="图的表示">图的表示</h2>
+<h3 id="邻接矩阵">邻接矩阵</h3>
+<p><code>array[i][j] ===1</code>代表i节点和j节点相邻，否则不相邻</p>
+<h3 id="邻接表">邻接表</h3>
+<p>相当于把每个节点的相邻节点一一列举出来。</p>
+<h3 id="关联矩阵">关联矩阵</h3>
+<p>形式和邻接矩阵一样，只是把邻接矩阵的直接维度换成对应的边，适用于边比顶点多的情况。</p>
+<h2 id="创建图类">创建图类</h2>
+<p>接下来就采用邻接表的方式创建上面的图并且采用字典来表示：</p>
+<p>创建字典类</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//创建字典类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dictionary</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> items = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//set(key,value)向字典里添加新元素，这里主要用来添加边</span></span><br><span class="line">    <span class="built_in">this</span>.set = <span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;</span><br><span class="line">        items[key] = value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//has(key)如果存在就返回true，否则false</span></span><br><span class="line">    <span class="built_in">this</span>.has = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> key <span class="keyword">in</span> items;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//get(key)通过key查找特定的数值并返回，这里主要用来查找顶点对应的边数组</span></span><br><span class="line">    <span class="built_in">this</span>.get = <span class="function"><span class="keyword">function</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.has(key) ? items[key] : <span class="literal">undefined</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="创建图类-2">创建图类</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建图类Graph()</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Graph</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> vertices = [];	<span class="comment">//用来储存顶点</span></span><br><span class="line">	<span class="keyword">var</span> adjList = <span class="keyword">new</span> Dictionary();	<span class="comment">//用来储存边</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建initializeColor用来初始化各个顶点的颜色，为遍历过程中的标记做准备</span></span><br><span class="line">	<span class="keyword">var</span> initializeColor = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> color = [];</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;vertices.length; i++)&#123;</span><br><span class="line">			color[vertices[i]] = <span class="string">&#x27;white&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> color;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//addVertex(key)用来添加顶点</span></span><br><span class="line">	<span class="built_in">this</span>.addVertex = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">		vertices.push(v);</span><br><span class="line">		adjList.set(v, []);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//addEdge(key,value)用来添加边v-w</span></span><br><span class="line">	<span class="built_in">this</span>.addEdge = <span class="function"><span class="keyword">function</span>(<span class="params">v,w</span>)</span>&#123;</span><br><span class="line">		adjList.get(v).push(w);</span><br><span class="line">		adjList.get(w).push(v);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//toString()把邻接表转化成字符串的形式，便于输出显示</span></span><br><span class="line">	<span class="built_in">this</span>.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> s = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;vertices.length; i++)&#123;</span><br><span class="line">			s += vertices[i] + <span class="string">&#x27;-&gt;&#x27;</span>;</span><br><span class="line">			<span class="keyword">var</span> neighbors = adjList.get(vertices[i]);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>; j&lt;neighbors.length; j++)&#123;</span><br><span class="line">				s += neighbors[j] + <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			s += <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建实例">创建实例</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建实例</span></span><br><span class="line"><span class="keyword">var</span> graph = <span class="keyword">new</span> Graph();</span><br><span class="line"><span class="keyword">var</span> myVertices = [<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;F&#x27;</span>,<span class="string">&#x27;G&#x27;</span>,<span class="string">&#x27;H&#x27;</span>,<span class="string">&#x27;I&#x27;</span>];</span><br><span class="line"><span class="comment">//添加顶点</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;myVertices.length; i++)&#123;</span><br><span class="line">	graph.addVertex(myVertices[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//逐一加入边</span></span><br><span class="line">graph.addEdge(<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;D&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;G&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;C&#x27;</span>,<span class="string">&#x27;D&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;G&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;D&#x27;</span>,<span class="string">&#x27;H&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;E&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;B&#x27;</span>,<span class="string">&#x27;F&#x27;</span>);</span><br><span class="line">graph.addEdge(<span class="string">&#x27;E&#x27;</span>,<span class="string">&#x27;I&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(graph.toString());</span><br></pre></td></tr></table></figure>
+<h2 id="输出的结果为：">输出的结果为：</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">A-&gt;B C D </span><br><span class="line">B-&gt;A E F </span><br><span class="line">C-&gt;A G D </span><br><span class="line">D-&gt;A C G H </span><br><span class="line">E-&gt;B I </span><br><span class="line">F-&gt;B </span><br><span class="line">G-&gt;C D </span><br><span class="line">H-&gt;D </span><br><span class="line">I-&gt;E </span><br></pre></td></tr></table></figure>
+<h1>图的遍历</h1>
+<h2 id="广度优先遍历">广度优先遍历</h2>
+<p>采用队列的方式，先添加节点的先被探索；<br>
+采用三种颜色来反应节点的状态：<br>
+<strong>白色</strong>：还没被访问；<br>
+<strong>灰色</strong>：被访问但未被探索；<br>
+<strong>黑色</strong>：被访问且探索过；</p>
+<h2 id="思路：">思路：</h2>
+<p>首先搜索节点A，探索A节点的相邻节点B,C,D,把其加入队列中，再逐一出队列进行探索，从而实现广度遍历。</p>
+<h2 id="添加bfs方法">添加bfs方法</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//广度优先遍历，在Graph()类中添加以下方法</span></span><br><span class="line"><span class="built_in">this</span>.bfs = <span class="function"><span class="keyword">function</span>(<span class="params">v, callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> color = initializeColor();	<span class="comment">//初始化节点，都标记为白色</span></span><br><span class="line">    <span class="keyword">var</span> queue = [];	<span class="comment">//创建队列用来顶点的入队；</span></span><br><span class="line">    queue.push(v);	<span class="comment">//访问的节点入队列</span></span><br><span class="line">    <span class="keyword">while</span>(!queue.length==<span class="number">0</span>)&#123;	<span class="comment">//如果队列非空就执行以下</span></span><br><span class="line">        <span class="keyword">var</span> u = queue.shift();	<span class="comment">//节点出队列</span></span><br><span class="line">        <span class="keyword">var</span> neighbors = adjList.get(u);  <span class="comment">//探索节点对应的边</span></span><br><span class="line">        color[u] = <span class="string">&#x27;grey&#x27;</span>;	<span class="comment">//把搜索过的节点变成灰色</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;neighbors.length; i++)&#123;  </span><br><span class="line">            <span class="keyword">var</span> w = neighbors[i];</span><br><span class="line">            <span class="keyword">if</span>(color[w] === <span class="string">&#x27;white&#x27;</span>)&#123;	<span class="comment">//如果探索到的子节点是白色就逐一变灰并入队列</span></span><br><span class="line">                color[w] = <span class="string">&#x27;grey&#x27;</span>;</span><br><span class="line">                queue.push(w);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        color[u] = <span class="string">&#x27;black&#x27;</span>;		<span class="comment">//节点完成搜索和探索的过程，直接变黑</span></span><br><span class="line">        <span class="keyword">if</span>(callback)&#123;	</span><br><span class="line">            callback(u);		<span class="comment">//回调函数，可以用来输出</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建bfs实例">创建bfs实例</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bfs实例</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printNode</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">&#x27;Visited vertex:&#x27;</span>+value);</span><br><span class="line">&#125;</span><br><span class="line">graph.bfs(myVertices[<span class="number">0</span>],printNode);</span><br></pre></td></tr></table></figure>
+<h2 id="bfs输出结果">bfs输出结果</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Visited vertex:A</span><br><span class="line">Visited vertex:B</span><br><span class="line">Visited vertex:C</span><br><span class="line">Visited vertex:D</span><br><span class="line">Visited vertex:E</span><br><span class="line">Visited vertex:F</span><br><span class="line">Visited vertex:G</span><br><span class="line">Visited vertex:H</span><br><span class="line">Visited vertex:I</span><br></pre></td></tr></table></figure>
+<h2 id="使用BFS寻找最短路径">使用BFS寻找最短路径</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.BFS = <span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> color = initializeColor(),</span><br><span class="line">		queue = [],</span><br><span class="line">		d = [],	<span class="comment">//用来储存从v到u的距离</span></span><br><span class="line">		pred = [];	<span class="comment">//用来储存节点的前溯点</span></span><br><span class="line">		queue.push(v);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;vertices.length; i++)&#123;</span><br><span class="line">			d[vertices[i]] = <span class="number">0</span>;		<span class="comment">//初始化</span></span><br><span class="line">			pred[vertices[i]] = <span class="literal">null</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">while</span>(!queue.length == <span class="number">0</span>)&#123;</span><br><span class="line">			<span class="keyword">var</span> u = queue.shift();</span><br><span class="line">			<span class="keyword">var</span> neighbors = adjList.get(u);</span><br><span class="line">			color[u] = <span class="string">&#x27;grey&#x27;</span>;</span><br><span class="line">			<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;neighbors.length; i++)&#123;</span><br><span class="line">				<span class="keyword">var</span> w = neighbors[i];</span><br><span class="line">				<span class="keyword">if</span>(color[w] === <span class="string">&#x27;white&#x27;</span>)&#123;</span><br><span class="line">					color[w] = <span class="string">&#x27;grey&#x27;</span>;</span><br><span class="line">					d[w] = d[u]+<span class="number">1</span>;	<span class="comment">//从头节点到w的距离</span></span><br><span class="line">					pred[w] = u;</span><br><span class="line">					queue.push(w);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; </span><br><span class="line">			color[u] = <span class="string">&#x27;black&#x27;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span>&#123;</span><br><span class="line">			<span class="attr">distance</span>:d,</span><br><span class="line">			<span class="attr">predecessers</span>:pred</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建BFS实例">创建BFS实例</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//BFS实例</span></span><br><span class="line"><span class="keyword">var</span> shortestPathA = graph.BFS(myVertices[<span class="number">0</span>]);<span class="comment">//需要输入头节点myVertices[0]</span></span><br><span class="line"><span class="comment">//console.log(shortestPathA);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//搜索路径BFS</span></span><br><span class="line"><span class="keyword">var</span> fromVertex = myVertices[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>; i&lt;myVertices.length; i++)&#123;</span><br><span class="line">	<span class="keyword">var</span> toVertex = myVertices[i];</span><br><span class="line">	<span class="keyword">var</span> path = [];	<span class="comment">//path用来储存路径</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">var</span> v=toVertex; v!==fromVertex; v=shortestPathA.predecessers[v])&#123;</span><br><span class="line">		path.push(v);</span><br><span class="line">	&#125;</span><br><span class="line">	path.push(fromVertex);</span><br><span class="line">	<span class="keyword">var</span> s = path.pop();</span><br><span class="line">	<span class="keyword">while</span>(!path.length==<span class="number">0</span>)&#123;</span><br><span class="line">		s += <span class="string">&#x27;-&#x27;</span> + path.pop();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">console</span>.log(s)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="BFS输出结果">BFS输出结果</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">A-B</span><br><span class="line">A-C</span><br><span class="line">A-D</span><br><span class="line">A-B-E</span><br><span class="line">A-B-F</span><br><span class="line">A-C-G</span><br><span class="line">A-D-H</span><br><span class="line">A-B-E-I</span><br></pre></td></tr></table></figure>
+<h2 id="4-2-深度优先遍历">4.2.深度优先遍历</h2>
+<p>采用栈的方式，先添加节点的先被探索；<br>
+由递归实现。</p>
+<h2 id="思路：-2">思路：</h2>
+<p>从节点A开始，探索到A的相邻节点B,C,D压入栈中（这里的代码采用for循环，所以没有实质上的栈，但是用栈更容易理解），接着搜索B，探索到B的相邻节点E,F压入栈中，以此递归。</p>
+<h2 id="添加dfs方法">添加dfs方法</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.dfs = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> color = initializeColor();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;vertices.length; i++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(color[vertices[i]]===<span class="string">&#x27;white&#x27;</span>)&#123;</span><br><span class="line">				dfsVisit(vertices[i], color, callback)<span class="comment">//调用递归函数</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> dfsVisit = <span class="function"><span class="keyword">function</span>(<span class="params">u, color, callback</span>)</span>&#123;</span><br><span class="line">		color[u] = <span class="string">&#x27;grey&#x27;</span>;</span><br><span class="line">		<span class="keyword">if</span>(callback)&#123;</span><br><span class="line">			callback(u);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">var</span> neighbors = adjList.get(u);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;neighbors.length; i++)&#123;</span><br><span class="line">			<span class="keyword">var</span> w = neighbors[i];</span><br><span class="line">			<span class="keyword">if</span>(color[w] === <span class="string">&#x27;white&#x27;</span>)&#123;</span><br><span class="line">				dfsVisit(w, color, callback);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		color[u] = <span class="string">&#x27;black&#x27;</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="创建dfs实例">创建dfs实例</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">graph.dfs(printNode);</span><br></pre></td></tr></table></figure>
+<h2 id="dfs输出结果">dfs输出结果</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Visited vertex:A</span><br><span class="line">Visited vertex:B</span><br><span class="line">Visited vertex:E</span><br><span class="line">Visited vertex:I</span><br><span class="line">Visited vertex:F</span><br><span class="line">Visited vertex:C</span><br><span class="line">Visited vertex:G</span><br><span class="line">Visited vertex:D</span><br><span class="line">Visited vertex:H</span><br></pre></td></tr></table></figure>
+</blockquote>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/tree/">tree</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://example.com/2021/10/22/Tree&Graph/" data-title="Tree &amp; Graph | front-end study" data-tsina="" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2021/11/08/算法/" title="KMP &amp; 动态规划 &amp; 贪心算法 &amp; Prim算法">
+  <strong>上一篇：</strong><br/>
+  <span>
+  KMP &amp; 动态规划 &amp; 贪心算法 &amp; Prim算法</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2021/10/22/sort/"  title="sort">
+ <strong>下一篇：</strong><br/> 
+ <span>sort
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">树的概念：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%9A"><span class="toc-number">1.2.</span> <span class="toc-text">二叉树：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">树的特点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">性质：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="toc-number">1.2.3.</span> <span class="toc-text">二叉树遍历</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">二叉树结点删除</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">图</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD"><span class="toc-number">3.1.</span> <span class="toc-text">图的相关术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-number">3.2.</span> <span class="toc-text">图的表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.1.</span> <span class="toc-text">邻接矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">邻接表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E8%81%94%E7%9F%A9%E9%98%B5"><span class="toc-number">3.2.3.</span> <span class="toc-text">关联矩阵</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E7%B1%BB"><span class="toc-number">3.3.</span> <span class="toc-text">创建图类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%9B%BE%E7%B1%BB-2"><span class="toc-number">3.4.</span> <span class="toc-text">创建图类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">3.5.</span> <span class="toc-text">创建实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%BA%EF%BC%9A"><span class="toc-number">3.6.</span> <span class="toc-text">输出的结果为：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">图的遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86"><span class="toc-number">4.1.</span> <span class="toc-text">广度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0bfs%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.</span> <span class="toc-text">添加bfs方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAbfs%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.4.</span> <span class="toc-text">创建bfs实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bfs%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.5.</span> <span class="toc-text">bfs输出结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8BFS%E5%AF%BB%E6%89%BE%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-number">4.6.</span> <span class="toc-text">使用BFS寻找最短路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BABFS%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.7.</span> <span class="toc-text">创建BFS实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFS%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.8.</span> <span class="toc-text">BFS输出结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86"><span class="toc-number">4.9.</span> <span class="toc-text">4.2.深度优先遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A-2"><span class="toc-number">4.10.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0dfs%E6%96%B9%E6%B3%95"><span class="toc-number">4.11.</span> <span class="toc-text">添加dfs方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAdfs%E5%AE%9E%E4%BE%8B"><span class="toc-number">4.12.</span> <span class="toc-text">创建dfs实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dfs%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">4.13.</span> <span class="toc-text">dfs输出结果</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+
+
+  
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/introduction-hexo/" title="introduction hexo">introduction hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/bubble-sorting-select-sorting-insertion-sorting-shell-sorting/" title="bubble sorting,select sorting,insertion sorting,shell sorting">bubble sorting,select sorting,insertion sorting,shell sorting<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/tree/" title="tree">tree<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="https://coderq.com" target="_blank" title="一个面向程序员交流分享的新一代社区">码农圈</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://wuchong.me" target="_blank" title="Jark&#39;s Blog">Jark&#39;s Blog</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">Weibo</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=&verifier=&dpc=1"></iframe>
+</div>
+
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m weiweiling in Google. <br/>
+			</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/2176287895" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2021 
+		
+		<a href="/about" target="_blank" title="weiweiling">weiweiling</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
