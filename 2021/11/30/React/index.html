@@ -11,15 +11,15 @@
     
 
     
-    <meta name="description" content="React 创建元素，渲染元素 123456789101112import React from &amp;#x27;react&amp;#x27;import ReactDom from &amp;#x27;react-dom&amp;#x27;const name &#x3D; &quot;Jack&quot;const age &#x3D; 19&#x2F;&#x2F;创建react元素const title &#x3D; (    &lt;h1 className&#x3D;&amp;q">
+    <meta name="description" content="React React 脚手架的使用 使用React脚手架初始化项目 12npx create-react-app my-app&#x2F;&#x2F;使用React脚手架初始化项目npm start&#x2F;&#x2F;启动项目 创建元素，渲染元素 123456789101112import React from &amp;#x27;react&amp;#x27;import ReactDom from &amp;#x27;react-dom&amp;#x27;c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React">
 <meta property="og:url" content="http://example.com/2021/11/30/React/index.html">
 <meta property="og:site_name" content="front-end study">
-<meta property="og:description" content="React 创建元素，渲染元素 123456789101112import React from &amp;#x27;react&amp;#x27;import ReactDom from &amp;#x27;react-dom&amp;#x27;const name &#x3D; &quot;Jack&quot;const age &#x3D; 19&#x2F;&#x2F;创建react元素const title &#x3D; (    &lt;h1 className&#x3D;&amp;q">
+<meta property="og:description" content="React React 脚手架的使用 使用React脚手架初始化项目 12npx create-react-app my-app&#x2F;&#x2F;使用React脚手架初始化项目npm start&#x2F;&#x2F;启动项目 创建元素，渲染元素 123456789101112import React from &amp;#x27;react&amp;#x27;import ReactDom from &amp;#x27;react-dom&amp;#x27;c">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-30T02:23:03.000Z">
-<meta property="article:modified_time" content="2021-12-01T08:53:33.198Z">
+<meta property="article:modified_time" content="2021-12-12T08:13:58.441Z">
 <meta property="article:author" content="weiweiling">
 <meta name="twitter:card" content="summary">
 
@@ -35,6 +35,8 @@
     
     
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
 
 <meta name="generator" content="Hexo 5.4.0"></head>
 
@@ -99,15 +101,109 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%B8%B2%E6%9F%93%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.</span> <span class="toc-text">创建元素，渲染元素</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">React 脚手架的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%B8%B2%E6%9F%93%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">创建元素，渲染元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React%E7%BB%84%E5%BB%BA%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">React组建的两种创建方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.使用函数创建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.使用类创建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8A%BD%E7%A6%BB%E4%B8%BA%E7%8B%AC%E7%AB%8B%E7%9A%84JS%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.抽离为独立的JS文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">React事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.事件对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%8A%B6%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8E%E6%97%A0%E7%8A%B6%E6%80%81%E7%BB%84%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">有状态组件与无状态组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84state%E4%B8%8EsetState"><span class="toc-number">1.6.</span> <span class="toc-text">组件中的state与setState</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#state%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.6.1.</span> <span class="toc-text">state的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setState-%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">setState()修改状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">表单处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.受控组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">多表单元素优化：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-number">1.7.2.</span> <span class="toc-text">2.非受控组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84props"><span class="toc-number">1.8.</span> <span class="toc-text">组件的props</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<h1>React</h1>
+<h2 id="React-脚手架的使用">React 脚手架的使用</h2>
+<p>使用React脚手架初始化项目</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app my-app//使用React脚手架初始化项目</span><br><span class="line">npm start//启动项目</span><br></pre></td></tr></table></figure>
 <h2 id="创建元素，渲染元素">创建元素，渲染元素</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">import ReactDom from &#x27;react-dom&#x27;</span><br><span class="line">const name = &quot;Jack&quot;</span><br><span class="line">const age = 19</span><br><span class="line">//创建react元素</span><br><span class="line">const title = (</span><br><span class="line">    &lt;h1 className=&quot;title&quot;&gt;</span><br><span class="line">        hello React, &#123;name&#125;, 年龄：&#123;age&#125;</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">)</span><br><span class="line">//渲染react元素</span><br><span class="line">ReactDom.render(title, document.getElementById(&#x27;root&#x27;))</span><br></pre></td></tr></table></figure>
 <p>创建元素：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const title = React.createElement(&quot;h1&quot;, null, &quot;Hello React&quot;);</span><br><span class="line">const title = (</span><br><span class="line">    &lt;h1 className=&quot;title&quot;&gt;</span><br><span class="line">        hello React!!!</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">)//JSx</span><br></pre></td></tr></table></figure>
+<h2 id="React组建的两种创建方式：">React组建的两种创建方式：</h2>
+<h3 id="1-使用函数创建组件">1.使用函数创建组件</h3>
+<p>函数组件：使用JS的函数（或箭头函数）创建组件</p>
+<p>约定1：函数名称必须大写</p>
+<p>约定2：函数组件必须有返回值，表示该组件的结构</p>
+<p>如果返回值是null，表示不渲染任何元素</p>
+<p>渲染函数组件：用函数名作为组件标签名</p>
+<p>组件标签名既可以是单标签，也可以是双标签。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function Hello()&#123;</span><br><span class="line">    return (&lt;div&gt;</span><br><span class="line">            这是我的第一个函数组件</span><br><span class="line">        &lt;/div&gt;)</span><br><span class="line">&#125;</span><br><span class="line">const Hello1=()=&gt;&lt;div&gt;这是我的第一个函数组件&lt;/div&gt;</span><br><span class="line">ReactDOM.render(&lt;Hello/&gt;, document.getElementById(&#x27;root&#x27;));</span><br></pre></td></tr></table></figure>
+<h3 id="2-使用类创建组件">2.使用类创建组件</h3>
+<p>类组件：使用ES6的class创建的组件</p>
+<p>约定1：类名称必须以大写字母开头</p>
+<p>约定2：类组件应该继承React.Componet父类，从而可以使用父类中提供的属性与方法</p>
+<p>约定3：类组件必须提供render()方法。</p>
+<p>约定4：render()方法必须有返回值，表示该组件的结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Hello extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (&lt;div&gt;</span><br><span class="line">                这是我的第一个div</span><br><span class="line">            &lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-抽离为独立的JS文件">3.抽离为独立的JS文件</h3>
+<p>1.创建Hello.js</p>
+<p>2.在Hello.js中创建组件并导出该组件</p>
+<p>3.在index.js中导入Hello组件</p>
+<h2 id="React事件处理">React事件处理</h2>
+<h3 id="1-事件绑定">1.事件绑定</h3>
+<p>语法：on + 事件名称 = {事件处理程序}，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onClick=&#123;()=&gt;&#123;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>驼峰命名法：比如：onMouseEnter、onFocus。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class App extends React.Component&#123;</span><br><span class="line">    handleClick()&#123;</span><br><span class="line">        console.log(&quot;单击事件触发了&quot;);&#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (&lt;button onClick = &#123;this.handleClick&#125;&gt;点击&lt;/button&gt;)</span><br><span class="line">    															&#125;</span><br><span class="line">    &#125;</span><br><span class="line">function App()&#123;</span><br><span class="line">    function handleClick()&#123;</span><br><span class="line">        console.log(&quot;单击事件触发了&quot;);&#125;</span><br><span class="line">    return (&lt;button onClick = &#123;handleClick&#125;&gt;点击&lt;/button&gt;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-事件对象">2.事件对象</h3>
+<p>可以通过事件处理程序的参数获取事件对象</p>
+<p>React中的事件对象叫做：合成事件（对象）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function handleClick(e)&#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    console.log(&#x27;事件对象&#x27;, e)</span><br><span class="line">&#125;</span><br><span class="line">&lt;a onClick=&#123;handleClick&#125;&gt;点我不会挑战页面&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="有状态组件与无状态组件">有状态组件与无状态组件</h2>
+<p>函数组件又叫做无状态组件，类组件又叫做有状态组件。</p>
+<p>状态即数据，函数组件没有自己的状态，只负责数据展示（静）</p>
+<p>类组件有自己的状态，负责更新UI， 让页面动起来.</p>
+<h2 id="组件中的state与setState">组件中的state与setState</h2>
+<h3 id="state的基本使用">state的基本使用</h3>
+<p>状态就是数据，是组件内部私有数据，只能在组件内部使用</p>
+<p>state的值是对象，表示一个组件中可以有多个数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">constructor() &#123;</span><br><span class="line">        super();</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count:0</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">state = &#123;count:0&#125;//两种初始化状态的方法</span><br><span class="line">&#123;this.state.count&#125;//获取状态</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">import React from &#x27;react&#x27;</span><br><span class="line">class Hello extends React.Component&#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        super();</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            count:0,</span><br><span class="line">            test:&#x27;a&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // state = &#123;count:0&#125;</span><br><span class="line">    handleClick(e)&#123;</span><br><span class="line">        e.preventDefault()</span><br><span class="line">        console.log(&quot;a标签的单击事件被触发了&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (&lt;div&gt;</span><br><span class="line">            &lt;h1&gt;</span><br><span class="line">                计数器：&#123;this.state.count&#125;</span><br><span class="line">            &lt;/h1&gt;</span><br><span class="line">            &lt;button onClick=&#123;()=&gt;&#123;</span><br><span class="line">                this.setState(&#123;count:this.state.count+1&#125;)</span><br><span class="line">            &#125;&#125;&gt;</span><br><span class="line">                +1</span><br><span class="line">            &lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default Hello</span><br></pre></td></tr></table></figure>
+<h3 id="setState-修改状态">setState()修改状态</h3>
+<p>状态时可变的</p>
+<p>语法：this.setState({要修改的数据})</p>
+<p>注意：不要直接修改state中的值，这是错误的。</p>
+<p>setState()作用：1.修改state2.更新UI</p>
+<p>思想：数据驱动视图</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//正确</span><br><span class="line">this.setState(&#123;</span><br><span class="line">	count:this.state.count+1</span><br><span class="line">&#125;)</span><br><span class="line">//错误</span><br><span class="line">this.state.count += 1</span><br></pre></td></tr></table></figure>
+<h2 id="表单处理">表单处理</h2>
+<h3 id="1-受控组件">1.受控组件</h3>
+<ul>
+<li>
+<p>HTML中的表单元素是可输入的，也就是有自己的可变状态</p>
+</li>
+<li>
+<p>而，react中的可变状态通常保存在state中，并且只能通过setState()方法来修改。</p>
+</li>
+<li>
+<p>React将state与表单元素值value绑定在一起，由state的值来控制表单元素的值。</p>
+</li>
+<li>
+<p>受控组件：其值收到React控制的表单元素</p>
+</li>
+</ul>
+<p>步骤：</p>
+<ol>
+<li>在state中添加一个状态，作为表单元素的value值（控制表单元素值的来源）</li>
+<li>给表单元素绑定change事件，将表单元素的值设置为state的值（控制表单元素值的变化）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">state = &#123;txt:&#x27;&#x27;&#125;</span><br><span class="line">&lt;input type = &quot;text&quot; value = &#123;this.state.txt&#125;</span><br><span class="line">    onChange = &#123;e=&gt;this.setState(&#123;txt:e.target.value&#125;)&#125;</span><br><span class="line">    /&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="多表单元素优化：">多表单元素优化：</h4>
+<ol>
+<li>给表单元素添加name属性，名称与state相同</li>
+<li>根据表单元素类型获取相应值</li>
+<li>在change事件处理程序中通过[name]来修改对应的state</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = &quot;text&quot; name = &quot;txt&quot; value = &#123;this.state.txt&#125; onChange = &#123;this.handleForm&#125;/&gt;</span><br><span class="line">//根据表单元素类型获取值</span><br><span class="line">const value = target.type === &#x27;checkbox&#x27;?target.checked:target.value</span><br><span class="line">//根据name设置对应的state</span><br><span class="line">this.setState(&#123;</span><br><span class="line">    [name]:value</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="2-非受控组件">2.非受控组件</h3>
+<ol>
+<li>调用React.createRef()方法创建一个ref对象</li>
+<li>将创建好的Ref对象添加到文本框中</li>
+<li>通过ref对象获取到文本框中的值</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">constructor()&#123;</span><br><span class="line">    super()</span><br><span class="line">    this.txtRef = React.createRef()</span><br><span class="line">&#125;</span><br><span class="line">&lt;input type = &quot;text&quot; ref = &#123;this.txtRef&#125;/&gt;</span><br><span class="line">Console.log(this.txtRef.current.value)</span><br></pre></td></tr></table></figure>
+<h2 id="组件的props">组件的props</h2>
+<ul>
+<li>组件是封闭的，要接收外部数据应该通过props来实现</li>
+<li>props的作用：接受传递给组件的数据</li>
+<li>传递数据：给组件标签添加属性</li>
+<li>接收数据：函数组件通过参数props接收数据，类组件通过this.props接收数据</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;Hello name = &quot;jack&quot; age = &#123;19&#125;/&gt;//传递数据</span><br><span class="line">function Hello (props)&#123;</span><br><span class="line">    //props是一个对象</span><br><span class="line">    console.log(props)</span><br><span class="line">    return (&lt;div&gt;接收到的数据：&#123;props.name&#125;&lt;/div&gt;)</span><br><span class="line">&#125;</span><br><span class="line">class Hello extends React.Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return (&lt;div&gt;</span><br><span class="line">            接收到的数据：&#123;this.props.age&#125;&lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -154,7 +250,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%B8%B2%E6%9F%93%E5%85%83%E7%B4%A0"><span class="toc-number">1.1.</span> <span class="toc-text">创建元素，渲染元素</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">React</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#React-%E8%84%9A%E6%89%8B%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.1.</span> <span class="toc-text">React 脚手架的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%85%83%E7%B4%A0%EF%BC%8C%E6%B8%B2%E6%9F%93%E5%85%83%E7%B4%A0"><span class="toc-number">1.2.</span> <span class="toc-text">创建元素，渲染元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React%E7%BB%84%E5%BB%BA%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.</span> <span class="toc-text">React组建的两种创建方式：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.使用函数创建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BD%BF%E7%94%A8%E7%B1%BB%E5%88%9B%E5%BB%BA%E7%BB%84%E4%BB%B6"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.使用类创建组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%8A%BD%E7%A6%BB%E4%B8%BA%E7%8B%AC%E7%AB%8B%E7%9A%84JS%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.抽离为独立的JS文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#React%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">React事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.事件绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.事件对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%8A%B6%E6%80%81%E7%BB%84%E4%BB%B6%E4%B8%8E%E6%97%A0%E7%8A%B6%E6%80%81%E7%BB%84%E4%BB%B6"><span class="toc-number">1.5.</span> <span class="toc-text">有状态组件与无状态组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84state%E4%B8%8EsetState"><span class="toc-number">1.6.</span> <span class="toc-text">组件中的state与setState</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#state%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.6.1.</span> <span class="toc-text">state的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setState-%E4%BF%AE%E6%94%B9%E7%8A%B6%E6%80%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">setState()修改状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E5%A4%84%E7%90%86"><span class="toc-number">1.7.</span> <span class="toc-text">表单处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-number">1.7.1.</span> <span class="toc-text">1.受控组件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">多表单元素优化：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6"><span class="toc-number">1.7.2.</span> <span class="toc-text">2.非受控组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E7%9A%84props"><span class="toc-number">1.8.</span> <span class="toc-text">组件的props</span></a></li></ol></li></ol>
  
   </div>
 
